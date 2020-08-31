@@ -7,8 +7,8 @@ maintainer:          "hexirp@gmail.com"
 copyright:           "(C) Hexirp 2019"
 
 extra-source-files:
-- README.md
-- ChangeLog.md
+  - README.md
+  - ChangeLog.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -20,7 +20,9 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/Hexirp/yhseq-web#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+  - base >= 4.13.0.0 && < 4.14
+  - containers >= 0.6.2.1 && < 0.7
+  - vector >= 0.12.1.2 && < 0.13
 
 library:
   source-dirs: src
@@ -30,19 +32,19 @@ executables:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - yhseq-web
+      - yhseq-web
 
 tests:
   yhseq-web-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - yhseq-web
+      - yhseq-web
